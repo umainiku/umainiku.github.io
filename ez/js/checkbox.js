@@ -1,53 +1,42 @@
-console.log('initial checkbox.js');
 window.onload=load;
 function load() {
     // form get
-    var do_scroll=0;
-    var f=document.getElementById("f0");
+    var form_name = "form_atma";
+    var checkbox_prefix = "checkbox";
+    var f=document.getElementById(form_name);
     var v="";
-//    $(this).data('tmp', "init");
-//    var s=location.search.substr(1).split("&")
-//    for(var i=0;i<f.length;i++){
-//        if(f[i].type=="checkbox"){
-//            f[i].onclick=function(){ this.form.submit();}
-//            f[i].onkeypress=function(){ this.form.submit();}
-//            for(var j in s){
-//                if(s[j]==f[i].name+"="+f[i].value) f[i].checked=true;
-//            }
-//            if(f[i].checked) v+=(v==""?"":",")+f[i].value;
-//        }
-//    }
+    $(this).data('tmp', "init");
+    key = 'cookie_test';
+    var s=$.cookie(key).split(",");
+    for(var i=0;i<f.length;i++){
+        if(f[i].type=="checkbox"){
+            f[i].onclick=function(){
+                save_checkbox_data_to_cookie();
+            }
+            f[i].onkeypress=function(){
+                save_checkbox_data_to_cookie();
+            }
+            for(var k = 0, len = s.length; k < len; k++){
+                if((checkbox_prefix + s[k]) == f[i].name){
+                    f[i].checked=true;
+                }
+            }
 
-    console.log(v);
-    console.log($(this).data('tmp'));
-
-    if ($(this).data('tmp')==v){
-        console.log('v == tmp_v');
-    }else{
-        console.log('v != tmp_v!!');
+        }
     }
 
-
-    // scroll atma table
-    if (do_scroll){
-        var p = $(".scroll_atma").offset().top;
-        $('html,body').animate({ scrollTop: p }, 1000);
+    function save_checkbox_data_to_cookie(){
+        // フォームの内容をcookieに保存する
+        var _v="";
+        f=document.getElementById(form_name);
+        for(var i=0;i<f.length;i++){
+            if(f[i].checked){
+                _v+=(_v==""?"":",")+(i+1);
+            }
+        }
+        if(_v){
+            key = 'cookie_test';
+            $.cookie(key, _v);
+        }
     }
-    do_scroll=0;
-    $(this).data('tmp', v);
-    console.log($(this).data('tmp'));
-
-    //
-    key = 'cookie_test'
-    $.cookie(key, v);
-    c = $.cookie(key);
-    console.log("cookie:" + c);
-
-
-    $.cookie('the_cookie', 'the_value');
-    console.log($.cookie('the_cookie'));
-
-
-//    $('.scroll_atma').keepPosition();
-
 }
