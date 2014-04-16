@@ -4,11 +4,15 @@ function load() {
     var form_name = "form_atma";
     var checkbox_prefix = "checkbox";
     var f=document.getElementById(form_name);
-    var v="";
     $(this).data('tmp', "init");
     key = 'cookie_test';
     var s=$.cookie(key);
-    if (s==null){s=new Array();}
+    if (s==null){
+        s=new Array();
+    }else{
+        s = s.split(",");
+    }
+//    console.log("s is : "+ s);
     for(var i=0;i<f.length;i++){
         if(f[i].type=="checkbox"){
             f[i].onclick=function(){
@@ -20,9 +24,9 @@ function load() {
             for(var k = 0, len = s.length; k < len; k++){
                 if((checkbox_prefix + s[k]) == f[i].name){
                     f[i].checked=true;
+//                    console.log("s[k] : " + s[k] + " : f[i] : " + f[i].name);
                 }
             }
-
         }
     }
 
@@ -35,9 +39,11 @@ function load() {
                 _v+=(_v==""?"":",")+(i+1);
             }
         }
+//        console.log("_v is : " + _v);
         if(_v){
             key = 'cookie_test';
             $.cookie(key, _v);
+//            console.log($.cookie(key));
         }
     }
 }
