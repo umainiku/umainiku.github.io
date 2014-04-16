@@ -18,17 +18,8 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 <script type="text/javascript" src="./js/main.js?var=18"></script>
 <script type="text/javascript" src="./js/eorzeaclock.js"></script>
+<script type="text/javascript" src="./js/analytics.js"></script>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-16994094-18', 'dropboxusercontent.com');
-  ga('send', 'pageview');
-
-</script>
 </head>
 
 <body>
@@ -55,47 +46,25 @@
 <h3>Version.5 エオルゼア時間</h3>
 
 <div class="clockarea">
-  <span id="gameTime" style="font-weight:bold;"></span><br />
 
-  <table class="gameTimeTable" >
-    <tr>
-      <td>
-        <!--月  -->
-        ・<span id="month_name" style="font-weight:bold;"></span>
-        <br />
-      </td>
-      <td>
-        <img id="image_month_element" class="element_attribute">
-      </td>
-    </tr>
-    <tr>
-      <td>
-      <!--日  -->
-        ・<span id="day_name" style="font-weight:bold;"></span>
-        &nbsp;[<span id="day"></span>日]<br />
-      </td>
-      <td>
-        <img id="image_day_element" class="element_attribute">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <!--刻  -->
-        ・<span id="koku_name" style="font-weight:bold;"></span>
-        &nbsp;[<span id="hour"></span>時]
-      </td>
-      <td>
-        <img id="image_koku_element" class="element_attribute">
-      </td>
-    </tr>
+  <table class="atma">
+    <!--<caption align=top><span id="gameTime" style="font-size: 20px"></span></caption>-->
+
+    <tr><th style="width: 30%">Type</th><th>Element</th></tr>
+
+
+    <tr><td>エオルゼア時間 [Ez]</td><td><span id="gameTime" style="color: #FF0000;"></span></td></tr>
+    <tr><td><span id="month_name"></span></td><td><img id="image_month_element" class="element_attribute"></td></tr>
+    <tr><td><span id="day_name"></span></td><td><img id="image_day_element" class="element_attribute"></td></tr>
+    <tr><td><span id="koku_name"></span></td><td><img id="image_koku_element" class="element_attribute"></td></tr>
   </table>
-
-  ・次の刻まで地球時間でアト<span id="last_minute" style="font-weight:bold; color: #FF0000"></span>
 
   <br />
 
   <table class="atma">
-    <tr><th>check</th><th>守護月</th><th>ドロップ率</th><th>属性</th><th>名称</th><th>場所</th></tr>
+    <caption align=top>次の刻までアト<span id="last_minute" style="color: #FF0000;"></span></caption>
+
+    <tr><th>check</th><th>Class</th><th>Drop</th><th>Element</th><th>Name</th><th>Area</th></tr>
     <tr id="m1" ><td><input type="checkbox" id="checkbox-1" class="regular-checkbox big-checkbox" /><label for="checkbox-1"></label></td><td>1月</td><td class="percent" ><span id="drop1"></span>％</td><td><img src="./image/elemental/5.png" class="element_attribute">&nbsp;氷属性</td><td>磨羯のアートマ</td><td>東部森林</td></tr>
     <tr id="m2" ><td><input type="checkbox" id="checkbox-2" class="regular-checkbox big-checkbox" /><label for="checkbox-2"></label></td><td>2月</td><td class="percent" ><span id="drop2" ></span>％</td><td><img src="./image/elemental/5.png" class="element_attribute">&nbsp;氷属性</td><td>宝瓶のアートマ</td><td>高地ラノシア</td></tr>
     <tr id="m3" ><td><input type="checkbox" id="checkbox-3" class="regular-checkbox big-checkbox" /><label for="checkbox-3"></label></td><td>3月</td><td class="percent" ><span id="drop3" ></span>％</td><td><img src="./image/elemental/6.png" class="element_attribute">&nbsp;水属性</td><td>双魚のアートマ</td><td>低地ラノシア</td></tr>
