@@ -285,13 +285,14 @@ TD {
 	-webkit-animation:anime_atma_change 1s infinite alternate linear;
 }
 
-.blockquote {
-    /*margin: 5px 5px 1em;*/
-    /*padding: 0.5em;*/
-    /*background: #e7f4f9;*/
-    /*color: #26b;*/
-    /*border: dotted 2px #aaa;*/
-    width: 85%;
+.notes {
+    color: #666;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.warning{
+    color: #FF0000;
 }
 
 /* end ************/

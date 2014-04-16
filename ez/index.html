@@ -48,12 +48,8 @@
 <div class="clockarea">
 
   <table class="atma">
-    <!--<caption align=top><span id="gameTime" style="font-size: 20px"></span></caption>-->
-
     <tr><th style="width: 30%">Type</th><th>Element</th></tr>
-
-
-    <tr><td>エオルゼア時間 [Ez]</td><td><span id="gameTime" style="color: #FF0000;"></span></td></tr>
+    <tr><td>エオルゼア時間 [Ez]</td><td><span id="gameTime" class="warning"></span></td></tr>
     <tr><td><span id="month_name"></span></td><td><img id="image_month_element" class="element_attribute"></td></tr>
     <tr><td><span id="day_name"></span></td><td><img id="image_day_element" class="element_attribute"></td></tr>
     <tr><td><span id="koku_name"></span></td><td><img id="image_koku_element" class="element_attribute"></td></tr>
@@ -62,7 +58,7 @@
   <br />
 
   <table class="atma">
-    <caption align=top>次の刻までアト<span id="last_minute" style="color: #FF0000;"></span></caption>
+    <caption align=top>次の刻までアト<span id="last_minute" class="warning"></span></caption>
 
     <tr><th>check</th><th>Class</th><th>Drop</th><th>Element</th><th>Name</th><th>Area</th></tr>
     <tr id="m1" ><td><input type="checkbox" id="checkbox-1" class="regular-checkbox big-checkbox" /><label for="checkbox-1"></label></td><td>1月</td><td class="percent" ><span id="drop1"></span>％</td><td><img src="./image/elemental/5.png" class="element_attribute">&nbsp;氷属性</td><td>磨羯のアートマ</td><td>東部森林</td></tr>
@@ -78,11 +74,23 @@
     <tr id="m11" ><td><input type="checkbox" id="checkbox-11" class="regular-checkbox big-checkbox" /><label for="checkbox-11"></label></td><td>11月</td><td class="percent" ><span id="drop11" ></span>％</td><td><img src="./image/elemental/4.png" class="element_attribute">&nbsp;土属性</td><td>天蠍のアートマ</td><td>南ザナラーン</td></tr>
     <tr id="m12" ><td><input type="checkbox" id="checkbox-12" class="regular-checkbox big-checkbox" /><label for="checkbox-12"></label></td><td>12月</td><td class="percent" ><span id="drop12" ></span>％</td><td><img src="./image/elemental/4.png" class="element_attribute">&nbsp;土属性</td><td>人馬のアートマ</td><td>北部森林</td></tr>
   </table>
-
-  <br />
+  <div class="notes">
   ※ 属性月はドロップ率に寄与しない仕様で動作中
+  </div>
   <br />
-  <br />
+</div>
+
+<h3>Version.5.1 検証してみた</h3>
+<div class="clockarea">
+  <table class="atma">
+    <tr style="text-align:center;"><th>想定Drop率</th><th>FATE回数</th><th>アートマ生成個数</th><th>生成率</th></tr>
+    <tr style="text-align:center;"><td>10%</td><td>55回</td><td>5個</td><td><span class="warning">9.09%</span></td></tr>
+    <tr style="text-align:center;"><td>5%</td><td>177回</td><td>6個</td><td><span class="warning">3.39%</span></td></tr>
+    <tr style="text-align:center;"><td>1%</td><td>60回</td><td>1個</td><td><span class="warning">1.67%</span></td></tr>
+  </table>
+  <div class="notes">
+  ※ ドロップ率上がってるぽい
+  </div>
 
 </div>
 
