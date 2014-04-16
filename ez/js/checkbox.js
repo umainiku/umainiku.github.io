@@ -7,7 +7,8 @@ function load() {
     var v="";
     $(this).data('tmp', "init");
     key = 'cookie_test';
-    var s=$.cookie(key).split(",");
+    var s=$.cookie(key);
+    if (s==null){s=new Array();}
     for(var i=0;i<f.length;i++){
         if(f[i].type=="checkbox"){
             f[i].onclick=function(){
