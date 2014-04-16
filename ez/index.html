@@ -10,9 +10,12 @@
 <link rel="stylesheet" href="./css/checkbox.css">
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+<!--<script type="text/javascript" src="./js/jquery.js"></script>-->
+<script type="text/javascript" src="./js/jquery.cookie.js"></script>
 <script type="text/javascript" src="./js/main.js?var=2014.04.16"></script>
 <script type="text/javascript" src="./js/eorzeaclock.js"></script>
 <script type="text/javascript" src="./js/analytics.js"></script>
+<script type="text/javascript" src="./js/checkbox.js"></script>
 
 </head>
 
@@ -41,6 +44,7 @@
 
 <div class="clockarea">
 
+  <div class="scroll_atma">
   <table class="atma">
     <tr><th style="width: 30%">Type</th><th>Element</th></tr>
     <tr><td>エオルゼア時間 [Ez]</td><td><span id="gameTime" class="warning"></span></td></tr>
@@ -50,13 +54,20 @@
   </table>
 
   <br />
+<!--<form id="f0">-->
+<!--<p>valueは1<input type="checkbox" name="checkbox1" value="1" /></p>-->
+<!--<p>valueは2<input type="checkbox" name="checkbox2" value="2" /></p>-->
+<!--<p>valueは3<input type="checkbox" name="checkbox3" value="3" /></p>-->
+<!--</form>-->
 
+
+  <form id="f1">
   <table class="atma">
     <caption align=top>次の刻までアト<span id="last_minute" class="warning"></span></caption>
 
     <tr><th>check</th><th>Class</th><th>Drop</th><th>Element</th><th>Name</th><th>Area</th></tr>
-    <tr id="m1" ><td><input type="checkbox" id="checkbox-1" class="regular-checkbox big-checkbox" /><label for="checkbox-1"></label></td><td>1月</td><td class="percent" ><span id="drop1"></span>％</td><td><img src="./image/elemental/5.png" class="element_attribute">&nbsp;氷属性</td><td>磨羯のアートマ</td><td>東部森林</td></tr>
-    <tr id="m2" ><td><input type="checkbox" id="checkbox-2" class="regular-checkbox big-checkbox" /><label for="checkbox-2"></label></td><td>2月</td><td class="percent" ><span id="drop2" ></span>％</td><td><img src="./image/elemental/5.png" class="element_attribute">&nbsp;氷属性</td><td>宝瓶のアートマ</td><td>高地ラノシア</td></tr>
+    <tr id="m1" ><td><input type="checkbox" name="checkbox-1" class="regular-checkbox big-checkbox" value="1"/><label for="checkbox-1"></label></td><td>1月</td><td class="percent" ><span id="drop1"></span>％</td><td><img src="./image/elemental/5.png" class="element_attribute">&nbsp;氷属性</td><td>磨羯のアートマ</td><td>東部森林</td></tr>
+    <tr id="m2" ><td><input type="checkbox" name="checkbox-2" class="regular-checkbox big-checkbox" /><label for="checkbox-2"></label></td><td>2月</td><td class="percent" ><span id="drop2" ></span>％</td><td><img src="./image/elemental/5.png" class="element_attribute">&nbsp;氷属性</td><td>宝瓶のアートマ</td><td>高地ラノシア</td></tr>
     <tr id="m3" ><td><input type="checkbox" id="checkbox-3" class="regular-checkbox big-checkbox" /><label for="checkbox-3"></label></td><td>3月</td><td class="percent" ><span id="drop3" ></span>％</td><td><img src="./image/elemental/6.png" class="element_attribute">&nbsp;水属性</td><td>双魚のアートマ</td><td>低地ラノシア</td></tr>
     <tr id="m4" ><td><input type="checkbox" id="checkbox-4" class="regular-checkbox big-checkbox" /><label for="checkbox-4"></label></td><td>4月</td><td class="percent" ><span id="drop4" ></span>％</td><td><img src="./image/elemental/6.png" class="element_attribute">&nbsp;水属性</td><td>白羊のアートマ</td><td>中央ラノシア</td></tr>
     <tr id="m5" ><td><input type="checkbox" id="checkbox-5" class="regular-checkbox big-checkbox" /><label for="checkbox-5"></label></td><td>5月</td><td class="percent" ><span id="drop5" ></span>％</td><td><img src="./image/elemental/1.png" class="element_attribute">&nbsp;風属性</td><td>金牛のアートマ</td><td>東ザナラーン</td></tr>
@@ -68,6 +79,7 @@
     <tr id="m11" ><td><input type="checkbox" id="checkbox-11" class="regular-checkbox big-checkbox" /><label for="checkbox-11"></label></td><td>11月</td><td class="percent" ><span id="drop11" ></span>％</td><td><img src="./image/elemental/4.png" class="element_attribute">&nbsp;土属性</td><td>天蠍のアートマ</td><td>南ザナラーン</td></tr>
     <tr id="m12" ><td><input type="checkbox" id="checkbox-12" class="regular-checkbox big-checkbox" /><label for="checkbox-12"></label></td><td>12月</td><td class="percent" ><span id="drop12" ></span>％</td><td><img src="./image/elemental/4.png" class="element_attribute">&nbsp;土属性</td><td>人馬のアートマ</td><td>北部森林</td></tr>
   </table>
+  </form>
   <div class="notes">
   ※ 属性月はドロップ率に寄与しない仕様で動作中
   </div>
